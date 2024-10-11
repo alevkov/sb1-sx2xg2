@@ -63,15 +63,20 @@ const DrugSearch: React.FC<DrugSearchProps> = ({ onDrugSelect }) => {
 
   return (
     <div className="search-container">
+      <div className="grid">
+
+      <Search size={24} className="search-icon" />
       <div className="search-input-container">
-        <Search size={24} className="search-icon" />
+        
         <input
           type="text"
+          
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search for a substance..."
           className="search-input"
         />
+        </div>
       </div>
       {isLoading && <p>Loading...</p>}
       {!isLoading && searchResults.length > 0 && (

@@ -9,18 +9,21 @@ function App() {
 
   return (
     <div className="app">
+      <figure></figure>
+      <h1>⏿  thedrug.wiki</h1>
       <div className="warning">
-        <div className="grid">
+
           <AlertTriangle size={24} />
           <p><strong>Harm Reduction Notice:</strong> This information is provided for educational purposes only. Always consult with a healthcare professional before using any substance. Substance use carries inherent risks, and this resource aims to promote safer practices, not to encourage use.</p>
-        </div>
+
       </div>
       
       {!selectedDrug ? (
         <div>
+          <DrugSearch onDrugSelect={setSelectedDrug} />
           <div className="header">
-            <h1>THEDRUG.WIKI</h1>
-            <DrugSearch onDrugSelect={setSelectedDrug} />
+            
+            
           </div>
         </div>
       ) : (

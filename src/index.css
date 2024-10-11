@@ -438,9 +438,9 @@ label input {
 
 .grid {
   --grid-cells: 0;
-  display: flex;
+
   gap: 1ch;
-  width: calc(round(down, 100%, (1ch * var(--grid-cells)) - (1ch * var(--grid-cells) - 1)));
+  width: calc(round(down, 50%, (1ch * var(--grid-cells)) - (1ch * var(--grid-cells) - 1)));
   margin-bottom: var(--line-height);
 }
 

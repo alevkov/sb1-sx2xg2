@@ -22,12 +22,15 @@ const DrugInfo: React.FC<DrugInfoProps> = ({ drug }) => {
           <p><strong>Addiction Potential:</strong> {drug.addiction_potential}</p>
           <p><strong>Half-life:</strong> {drug.half_life}</p>
         </div>
+        <p>-------------</p>
         <div>
           <h2>Dosage</h2>
+          
           {drug.dosages && drug.dosages.routes_of_administration ? (
             drug.dosages.routes_of_administration.map((route, index) => (
               <div key={index}>
-                <h3>{route.route}</h3>
+                <h2>{route.route}</h2>
+                
                 <ul>
                   {Object.entries(route.dose_ranges).map(([key, value]) => (
                     <li key={key}><strong>{key}:</strong> {value}</li>
