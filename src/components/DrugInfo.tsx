@@ -16,32 +16,41 @@ const DrugInfo: React.FC<DrugInfoProps> = ({ drug }) => {
       <h1>{drug.drug_name}</h1>
       <div className="grid">
         <div>
-          <h2>General Information</h2>
-          <p><strong>Chemical Class:</strong> {drug.chemical_class}</p>
-          <p><strong>Psychoactive Class:</strong> {drug.psychoactive_class}</p>
-          <p><strong>Addiction Potential:</strong> {drug.addiction_potential}</p>
-          <p><strong>Half-life:</strong> {drug.half_life}</p>
+          <h2><strong>Chemical Class:</strong> {drug.chemical_class}</h2>
+          <h2><strong>Psychoactive Class:</strong> {drug.psychoactive_class}</h2>
+          <h2><strong>Addiction Potential:</strong> {drug.addiction_potential}</h2>
+          <h2><strong>Half-life:</strong> {drug.half_life}</h2>
         </div>
-        <p>-------------</p>
+
         <div>
-          <h2>Dosage</h2>
+          <h2>Dosage:</h2>
           
           {drug.dosages && drug.dosages.routes_of_administration ? (
             drug.dosages.routes_of_administration.map((route, index) => (
-              <div key={index}>
-                <h2>{route.route}</h2>
-                
-                <ul>
-                  {Object.entries(route.dose_ranges).map(([key, value]) => (
-                    <li key={key}><strong>{key}:</strong> {value}</li>
-                  ))}
-                </ul>
+              <div key={index} className="mb-4">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="text-left">{route.route}</th>
+                      <th className="text-left">Amount ({route.units})</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(route.dose_ranges).map(([key, value]) => (
+                      <tr key={key}>
+                        <td>{key}</td>
+                        <td>{value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             ))
           ) : (
             <p>Dosage information not available.</p>
           )}
         </div>
+      
       </div>
       <div className="drug-info">
         <h2>Duration</h2>

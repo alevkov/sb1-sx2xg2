@@ -151,9 +151,9 @@ table {
 th, td {
   border: var(--border-thickness) solid var(--text-color);
   padding: 
-    calc((var(--line-height) / 2))
-    calc(1ch - var(--border-thickness) / 2)
-    calc((var(--line-height) / 2) - (var(--border-thickness)))
+    calc((var(--line-height) / 3))
+    calc(1ch - var(--border-thickness) / 3)
+    calc((var(--line-height) / 3) - (var(--border-thickness)))
   ;
   line-height: var(--line-height);
   vertical-align: top;
@@ -166,6 +166,11 @@ table tbody tr:first-child > * {
 
 th {
   font-weight: 700;
+  font-size: smaller;
+}
+
+td {
+  font-size: smaller;
 }
 
 .width-min {
