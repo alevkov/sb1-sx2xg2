@@ -20,7 +20,7 @@ const DrugSearch: React.FC<DrugSearchProps> = ({ onDrugSelect }) => {
 
       setIsLoading(true);
       try {
-        const response = await fetch(`https://www.drug-do.se/dedgrl?drug_name_like=${encodeURIComponent(searchTerm)}`);
+        const response = await fetch(`https://www.drug-do.se/psyai?drug_name_like=${encodeURIComponent(searchTerm)}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -44,7 +44,7 @@ const DrugSearch: React.FC<DrugSearchProps> = ({ onDrugSelect }) => {
   const handleDrugSelect = async (drugName: string) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`https://www.drug-do.se/dedgrl?drug_name=${encodeURIComponent(drugName)}`);
+      const response = await fetch(`https://www.drug-do.se/psyai?drug_name=${encodeURIComponent(drugName)}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
